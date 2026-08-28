@@ -1,18 +1,35 @@
-/* 1. Target the native logo image wrapper */
-.logo-image-container,
-.branding-logo-img,
-.logo-container img {
-    width: 140px !important;     /* Increase width as desired (Default is ~50px-60px) */
-    height: auto !important;     /* Maintain original image aspect ratio */
-    max-height: 80px !important; /* Cap height to prevent spilling over header boundaries */
+/* --- INCREASE LOGO SIZE --- */
+/* Targets all known Crestron logo classes */
+.logo, 
+.company-logo, 
+.brand-logo, 
+.logo-container img, 
+.branding-logo img,
+img[src*="mentholatum"] {
+    max-width: 400px !important;
+    max-height: 200px !important;
+    width: auto !important;
+    height: auto !important;
 }
 
-/* 2. Expand the bounding box parent container */
-/* Crestron Native utilizes flex containers that will pinch a large logo if not expanded */
-.header-left-container,
-.branding-container {
-    width: auto !important;
-    min-width: 160px !important;  /* Creates breathing room for the wider logo */
-    display: flex !important;
-    align-items: center !important;
+/* --- DECREASE ROOM NAME FONT --- */
+/* Targets all known Crestron header classes */
+.room-name, 
+.room-name-text, 
+.header-title, 
+.room-details h1, 
+h1 {
+    font-size: 45px !important;
+    line-height: 1.2 !important;
+}
+
+/* --- FIX BACKGROUND STRETCHING --- */
+/* Forces the background to fit without distorting */
+.background, 
+.bg-image, 
+.app-background,
+body {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
 }
