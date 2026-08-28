@@ -1,9 +1,17 @@
-/* --- INCREASE LOGO SIZE --- */
-/* Targets all known Crestron logo classes */
-.logo, 
-.company-logo, 
-.brand-logo, 
-.logo-container img, 
+/* ==========================================================================
+   CRESTRON TSS-770 CUSTOM THEME OVERRIDE
+   ========================================================================== */
+
+/* --- 1. LOGO SIZE ADJUSTMENT --- */
+/* Targets the screensaver logo based on Crestron BEM naming conventions */
+.screensaver__container__logo_img {
+    height: 15vh !important; /* Default is 9vh. Adjust this value to scale */
+    width: auto !important;
+}
+
+/* Universal fallback for the bottom-right logo on active scheduling screens */
+.logo img, 
+.company-logo img, 
 .branding-logo img,
 img[src*="mentholatum"] {
     max-width: 400px !important;
@@ -12,19 +20,24 @@ img[src*="mentholatum"] {
     height: auto !important;
 }
 
-/* --- DECREASE ROOM NAME FONT --- */
-/* Targets all known Crestron header classes */
-.room-name, 
-.room-name-text, 
-.header-title, 
-.room-details h1, 
-h1 {
-    font-size: 45px !important;
+/* --- 2. ROOM NAME FONT SIZE --- */
+/* Targets the room name text based on Crestron BEM naming conventions */
+.room__container__room-details__name,
+.screensaver__container__room-details__name {
+    font-size: 3vh !important; /* Default is usually 4vh. Adjust to scale */
     line-height: 1.2 !important;
 }
 
-/* --- FIX BACKGROUND STRETCHING --- */
-/* Forces the background to fit without distorting */
+/* Universal fallback classes for room name headers */
+.room-name, 
+.header-title,
+h1 {
+    font-size: 40px !important;
+    line-height: normal !important;
+}
+
+/* --- 3. BACKGROUND IMAGE SCALING FIX --- */
+/* Forces the background to fit the screen without stretching or distorting */
 .background, 
 .bg-image, 
 .app-background,
