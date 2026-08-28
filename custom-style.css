@@ -1,0 +1,18 @@
+/* 1. Target the native logo image wrapper */
+.logo-image-container,
+.branding-logo-img,
+.logo-container img {
+    width: 140px !important;     /* Increase width as desired (Default is ~50px-60px) */
+    height: auto !important;     /* Maintain original image aspect ratio */
+    max-height: 80px !important; /* Cap height to prevent spilling over header boundaries */
+}
+
+/* 2. Expand the bounding box parent container */
+/* Crestron Native utilizes flex containers that will pinch a large logo if not expanded */
+.header-left-container,
+.branding-container {
+    width: auto !important;
+    min-width: 160px !important;  /* Creates breathing room for the wider logo */
+    display: flex !important;
+    align-items: center !important;
+}
